@@ -2,17 +2,17 @@
 #include <stdlib.h>
 
 /**
- * free_dog - frees dogs
- * @d: instance of dog_t
- * Return: void
+ * free_dog - free memory occupied
+ * by struct dog
+ * @d: pointer to struct in memory
+ *
  */
-
 void free_dog(dog_t *d)
 {
-	if (d)
+	if (d != NULL)
 	{
-		free(d->name);
 		free(d->owner);
+		free(d->name);
 		free(d);
 	}
 }
